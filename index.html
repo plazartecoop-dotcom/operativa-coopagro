@@ -169,7 +169,7 @@ function pct(a,b){return b?(a/b*100).toLocaleString('es-AR',{minimumFractionDigi
 function el(id){return document.getElementById(id);}
 function val(id){const e=el(id);return e?e.value.trim():'';}
 function numIn(id){const e=el(id);if(!e)return null;const v=e.value.replace(/[^\d]/g,'');return v===''?null:Number(v);}
-function decIn(id){const e=el(id);if(!e)return null;const v=e.value.trim().replace(/\./g,'').replace(',','.');if(v==='')return null;const n=parseFloat(v);return isNaN(n)?null:n;}
+function decIn(id){const e=el(id);if(!e)return null;const v=e.value.trim().replace(',','.');if(v==='')return null;const n=parseFloat(v);return isNaN(n)?null:n;}
 function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 function minutos(a,b){if(!a||!b)return 0;const x=a.split(':').map(Number),y=b.split(':').map(Number);let m=(y[0]*60+y[1])-(x[0]*60+x[1]);if(m<0)m+=1440;return m;}
 function hm(min){return Math.floor(min/60)+' h '+p2(min%60)+' min';}
